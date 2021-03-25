@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Or: why I  am so cool? 
+subtitle: Or, why I  am so cool? 
 ---
 
 My name is Jaime Bowen Varela. I have the following qualities:
