@@ -23,3 +23,9 @@ que me permitieron realizar varias contribuciones al proyecto europeo [AISA](htt
 En cuanto de manera profesional, en mi actual empresa hemos utilizado esta biblioteca para realizar varios estuidos de ocupación de pistas en aeropuertos, cálculos de flujos de entrada y KPI's.
 Si tuviera que decir algo que no me gusta nada sobre Traffic es que su instalación es un poco complicada y para la gente nueva en Python puede ser una epopeya su instalación si no se tiene cuidado. Eso es porque tiene dependecias con librerías dinámicas que no funcionan correctamente con ciertas versiones de Pandas o Python, pero Xavier ya esta implementando un target en conda-forge para que su instalación sea lo menos problemática posible.
 Sobre sus ejemplos de uso, podría aburrios poniendo cientos de scripts que he usado para filtrar o generar pipelines de Machine Learning pero creo que los [ejemplo](https://traffic-viz.github.io/gallery.html) de representaciones gráficas que tiene la biblioteca son bastante chulos y dan un idea mejor sbre que puede hacer Traffic.
+Finalmente comentar que si necesitas alguna pequeña ayuda de cómo usarla, siempre podeis contactarme por LinkedIn e intentaré ayudaros dentro de mis capaciades.
+
+Jaime Bowen
+Finalmente comentar que si necesitas alguna pequeña ayuda de cómo usarla, siempre podeis contactarme por LinkedIn e intentaré ayudaros dentro de mis capaciades.
+
+Jaime Bowen 
