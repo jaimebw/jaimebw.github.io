@@ -12,8 +12,8 @@ I am currently working as a Business/Data Analyst for [ALG](https://www.alg-glob
 During these two last years, apart from studying my BSc and my MSc, I've been working in data science related topics in aviation and air traffic control subjects.
 
 Speaking about what I like to do in my free time, I love to try new things and to travel. My main interests are:
-* Sports: Climbing and skiing
-* Music : King Krule and Frank Ocena
-* Video recording
-* Learning languages
-* And anything related to mountain activities
+* 🏋🏻 Sports: Climbing and skiing
+* 🎹 Music : King Krule and Frank Ocean
+* 🎬 Video recording
+* ⛩ Learning languages
+* 🗻 And anything related to mountain activities
