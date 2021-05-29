@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Mi biblioteca favorita 
-subtitle: Traffic, la biblioteca para tratar datos de navegación aérea
+title: Traffic, la biblioteca para tratar datos de navegación aérea
+subtitle: Un pequeño resumen
 gh-repo: xoolive/traffic
 gh-badge: [star, fork, follow]
 tags: [python, ads-b]
