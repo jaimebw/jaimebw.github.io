@@ -1,0 +1,53 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const posts = await getCollection("posts");
+const tagsMap = new Map<string, CollectionEntry<"posts">[]>();
+
+for (const post of posts) {
+  (post.data.tags ?? []).forEach((tag) => {
+    const bucket = tagsMap.get(tag) ?? [];
+    bucket.push(post);
+    tagsMap.set(tag, bucket);
+  });
+}
+
+const tags = Array.from(tagsMap.entries()).sort(([a], [b]) =>
+  a.localeCompare(b),
+);
+
+const formatDate = (value: Date) =>
+  value.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+---
+<PageLayout title="Tag Index" subtitle="Browse everything I've written">
+  <div class="tag-cloud">
+    {tags.map(([tag, list]) => (
+      <a href={`#${tag}`}>{tag} ({list.length})</a>
+    ))}
+  </div>
+
+  {tags.map(([tag, list]) => (
+    <section id={tag}>
+      <h2>#{tag}</h2>
+      <div class="grid">
+        {list
+          .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+          .map((post) => (
+            <article class="post-card">
+              <a href={`/${post.slug}/`}>
+                <h3>{post.data.title}</h3>
+              </a>
+              <time datetime={post.data.date.toISOString()}>
+                {formatDate(post.data.date)}
+              </time>
+            </article>
+          ))}
+      </div>
+    </section>
+  ))}
+</PageLayout>

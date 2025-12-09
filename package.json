@@ -1,0 +1,22 @@
+{
+  "name": "new_web",
+  "type": "module",
+  "scripts": {
+    "dev": "bunx --bun astro dev",
+    "build": "bunx --bun astro build",
+    "preview": "bunx --bun astro preview",
+    "astro": "bunx --bun astro"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "astro": "^5.16.4",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "katex": "^0.16.27"
+  }
+}
