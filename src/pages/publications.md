@@ -1,7 +1,7 @@
----
 layout: ../layouts/PageLayout.astro
 title: Publications and conferences
 subtitle: Academic world stuff
+poster_phd_days: /assets/pdf/phd_days_2025_poster.pdf
 ---
 
 # Conferences
@@ -19,3 +19,7 @@ subtitle: Academic world stuff
 # Works I have advised
 
 - R. Gracia Otálvaro "Diseño de una herramienta gráfica para facilitar el análisis y diseño de sistemas eléctricos basada en recursos de código abierto" (08/2024) [Link](https://repositorio.comillas.edu/xmlui/handle/11531/87868)
+
+# Posters and slides
+
+- [PhD Aerospace Engineering Doctoral Meeting 2025](/assets/pdf/phd_days_2025_poster.pdf)

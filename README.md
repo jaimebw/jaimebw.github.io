@@ -8,7 +8,7 @@ LaTeX, and Google Analytics out of the box.
 
 - [Astro 5](https://astro.build/) with Bun scripts (`bunx astro ...`)
 - Markdown content collections with `remark-math` + `rehype-katex` for LaTeX
-- Vendored CSS from *the monospace web* (`src/styles/monospace-*.css`)
+- Vendored CSS from *the monospace web* (`src/styles/monospace-*.css`) with matching markup so the UI stays identical (credit lives in the site footer)
 - Static assets live in `public/assets` (copied from the old `web/assets`)
 
 ## Getting started
