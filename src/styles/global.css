@@ -8,3 +8,24 @@ main {
 footer {
   margin-top: calc(var(--line-height) * 2);
 }
+
+.katex,
+.katex * {
+  font-family: var(--font-family) !important;
+  color: var(--text-color);
+}
+
+.katex {
+  font-size: 1.05rem;
+}
+
+.katex-display {
+  margin: calc(var(--line-height) * 2) 0;
+  padding: calc(var(--line-height)) 2ch;
+  border: var(--border-thickness) solid var(--text-color);
+  background: var(--background-color-alt);
+}
+
+.katex-display > .katex {
+  text-align: left;
+}
