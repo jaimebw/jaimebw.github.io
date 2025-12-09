@@ -25,29 +25,42 @@ const formatDate = (value: Date) =>
   });
 ---
 <PageLayout title="Tag Index" subtitle="Browse everything I've written">
-  <div class="tag-cloud">
-    {tags.map(([tag, list]) => (
-      <a href={`#${tag}`}>{tag} ({list.length})</a>
-    ))}
-  </div>
+  <h3>Overview</h3>
+  <table>
+    <thead>
+      <tr>
+        <th class="width-auto">Tag</th>
+        <th class="width-min">Posts</th>
+      </tr>
+    </thead>
+    <tbody>
+      {tags.map(([tag, list]) => (
+        <tr>
+          <td>
+            <a href={`#${tag}`}>{tag}</a>
+          </td>
+          <td>{list.length}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
 
   {tags.map(([tag, list]) => (
     <section id={tag}>
-      <h2>#{tag}</h2>
-      <div class="grid">
+      <h3>#{tag}</h3>
+      <ul class="incremental">
         {list
           .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
           .map((post) => (
-            <article class="post-card">
-              <a href={`/${post.slug}/`}>
-                <h3>{post.data.title}</h3>
-              </a>
+            <li>
+              <a href={`/${post.slug}/`}>{post.data.title}</a>
+              <br />
               <time datetime={post.data.date.toISOString()}>
                 {formatDate(post.data.date)}
               </time>
-            </article>
+            </li>
           ))}
-      </div>
+      </ul>
     </section>
   ))}
 </PageLayout>

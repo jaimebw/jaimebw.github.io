@@ -11,31 +11,26 @@ interface Props {
 }
 
 const { title, description, ogImage } = Astro.props;
-const baseTitle = "Jaime Bowen Varela";
-const pageTitle = title ? `${title} · ${baseTitle}` : baseTitle;
+const siteTitle = "Jaime Bowen Varela";
+const pageLabel = title ?? "Home";
 const metaDescription =
   description ??
   "Aero-software engineer writing about avionics, tooling, and random obsessions.";
 const canonicalUrl = Astro.site
   ? new URL(Astro.url.pathname, Astro.site).toString()
   : Astro.url.href;
+const today = new Date().toISOString().split("T")[0];
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pageTitle}</title>
+    <title>{pageLabel} · {siteTitle}</title>
     <meta name="description" content={metaDescription} />
     <link rel="icon" href="/assets/img/jaime_bird.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <link rel="canonical" href={canonicalUrl} />
-    <meta property="og:title" content={pageTitle} />
+    <meta property="og:title" content={pageLabel} />
     <meta property="og:description" content={metaDescription} />
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:type" content="website" />
@@ -44,31 +39,39 @@ const canonicalUrl = Astro.site
   </head>
   <body>
     <main>
-      <div class="page-frame">
-        <article class="content-card">
-          <SiteNav currentPath={Astro.url.pathname} />
-          <slot />
-        </article>
-        <footer class="site-footer">
-          <nav>
-            <a href="https://github.com/jaimebw" target="_blank" rel="noreferrer">github</a>
-            <a href="https://x.com/jaimebw" target="_blank" rel="noreferrer">x</a>
-            <a
-              href="https://www.linkedin.com/in/jaimebw"
-              target="_blank"
-              rel="noreferrer"
-              >linkedin</a
-            >
-            <a
-              href="https://scholar.google.com/citations?user=SIFn5O8AAAAJ&hl=es"
-              target="_blank"
-              rel="noreferrer"
-              >scholar</a
-            >
-          </nav>
-          <span>&copy; {new Date().getFullYear()} Jaime Bowen Varela.</span>
-        </footer>
-      </div>
+      <table class="header">
+        <tr>
+          <td colspan="2" rowspan="2" class="width-auto">
+            <h1 class="title">{siteTitle}</h1>
+            <span class="subtitle">Aero-Software Engineer</span>
+          </td>
+          <th>Page</th>
+          <td class="width-min">{pageLabel}</td>
+        </tr>
+        <tr>
+          <th>Updated</th>
+          <td class="width-min"><time>{today}</time></td>
+        </tr>
+        <tr>
+          <th class="width-min">Location</th>
+          <td class="width-auto">Montréal & Madrid</td>
+          <th class="width-min">Links</th>
+          <td>
+            <a href="https://github.com/jaimebw">GitHub</a> |
+            <a href="https://x.com/jaimebw">X</a> |
+            <a href="https://www.linkedin.com/in/jaimebw">LinkedIn</a>
+          </td>
+        </tr>
+      </table>
+      <SiteNav currentPath={Astro.url.pathname} />
+      <slot />
+      <footer>
+        <p>
+          &copy; {new Date().getFullYear()} Jaime Bowen Varela.
+          Styling borrowed from
+          <a href="https://github.com/owickstrom/the-monospace-web">The Monospace Web</a>.
+        </p>
+      </footer>
     </main>
   </body>
 </html>

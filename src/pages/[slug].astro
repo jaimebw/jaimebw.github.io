@@ -29,23 +29,26 @@ const formatDate = (value: Date) =>
 ---
 <BaseLayout title={post.data.title} description={post.data.subtitle}>
   <article>
-    <header class="hero">
-      <p class="chip">Post</p>
-      <h1>{post.data.title}</h1>
-      {post.data.subtitle && <p>{post.data.subtitle}</p>}
-      <time datetime={post.data.date.toISOString()}>
-        {formatDate(post.data.date)}
-      </time>
-      {post.data.tags && post.data.tags.length > 0 && (
-        <div class="tag-cloud">
-          {post.data.tags.map((tag) => (
-            <a href={`/tags#${tag}`}>{tag}</a>
-          ))}
-        </div>
-      )}
-    </header>
-    <div class="markdown">
-      <Content />
-    </div>
+    <h2>{post.data.title}</h2>
+    {post.data.subtitle && <p><em>{post.data.subtitle}</em></p>}
+    <table>
+      <tbody>
+        <tr>
+          <th class="width-min">Published</th>
+          <td>
+            <time datetime={post.data.date.toISOString()}>
+              {formatDate(post.data.date)}
+            </time>
+          </td>
+        </tr>
+        {post.data.tags && post.data.tags.length > 0 && (
+          <tr>
+            <th>Tags</th>
+            <td>{post.data.tags.join(", ")}</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+    <Content />
   </article>
 </BaseLayout>

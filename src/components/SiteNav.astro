@@ -12,22 +12,15 @@ const navItems = [
 ];
 
 const currentPath = Astro.props.currentPath ?? "/";
-
-const isActive = (href: string) =>
-  href === "/"
-    ? currentPath === href
-    : currentPath === href || currentPath.startsWith(`${href}/`);
 ---
-<nav class="site-nav">
-  <a href="/" aria-label="Jaime home link">
-    <strong>Jaime Bowen</strong>
-  </a>
-  <ul>
+<nav id="TOC" aria-label="Site navigation">
+  <h2 id="toc-title">Contents</h2>
+  <ul class="incremental">
     {navItems.map((item) => (
       <li>
         <a
           href={item.href}
-          aria-current={isActive(item.href) ? "page" : undefined}
+          aria-current={currentPath === item.href ? "page" : undefined}
         >
           {item.label}
         </a>
