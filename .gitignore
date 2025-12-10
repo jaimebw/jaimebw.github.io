@@ -3,3 +3,5 @@ node_modules
 dist
 .env
 the-monospace-web
+web
+.astro

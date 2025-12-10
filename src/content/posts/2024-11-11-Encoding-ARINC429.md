@@ -185,7 +185,12 @@ This setup ensures accurate and reliable data transmission critical for high-spe
 
 So, let's start by calculating the encoded value:
 
-$$ Val_{E} = \frac{value - offset}{scale} = \frac{200 - 0}{0.5} = 400 $$
+$$
+\operatorname{Val}_{E}
+  = \frac{\text{value} - \text{offset}}{\text{scale}}
+  = \frac{200 - 0}{0.5}
+  = 400
+$$
 
 Now we can start the encoding process. 
 
@@ -243,7 +248,12 @@ Let's assume we have an extended range tank, so we'll set byte 28 to 1.
 2. Encoding the fuel quantity (bytes 27 to 11):
 Suppose our fuel sensor reports 1000 liters. We'll use the formula:
 
-$$ Val_{E} = \frac{value - offset}{scale} = \frac{1000 - 0}{0.5} = 2000 $$
+$$
+\operatorname{Val}_{E}
+  = \frac{\text{value} - \text{offset}}{\text{scale}}
+  = \frac{1000 - 0}{0.5}
+  = 2000
+$$
 
 The binary representation of 2000 is 0b11111010000 (11 bits).
 
@@ -311,55 +321,24 @@ While ARINC429 may not be the most advanced protocol, its reliability ensures th
 
 
 # Encoding calculator {#enc-calc}
-<div id="wasm-container">
-
+<div id="wasm-container"></div>
 <style>
-      .game {
-        top: 0;
-        left: 0;
-        margin: 0;
-        border: 0;
-        width: 120%;
-        height: 100%;
-        overflow: hidden;
-        display: block;
-        image-rendering: optimizeSpeed;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -o-crisp-edges;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: optimize-contrast;
-        image-rendering: crisp-edges;
-        image-rendering: pixelated;
-        -ms-interpolation-mode: nearest-neighbor;
-      }
+  #wasm-container {
+    margin-top: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.75rem;
+    background: #0b0b0b;
+  }
+  .game {
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    image-rendering: optimizeSpeed;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+  }
 </style>
-<canvas
-      class="game"
-      id="canvas"
-      oncontextmenu="event.preventDefault()"
-></canvas>
-</div>
-<script>
-  var Module = {
-    preRun: [],
-    postRun: [],
-    print: function (o) {
-      (o = Array.prototype.slice.call(arguments).join(" ")), console.log(o);
-    },
-    printErr: function (o) {
-      (o = Array.prototype.slice.call(arguments).join(" ")),
-        console.error(o);
-    },
-    canvas: document.getElementById("canvas"),
-    setStatus: function (o) {
-      console.log("status: " + o);
-    },
-    monitorRunDependencies: function (o) {
-      console.log("monitor run deps: " + o);
-    },
-  };
-  window.onerror = function () {
-    console.log("onerror: " + event.message);
-  };
-</script>
-<script async src="../assets/js/demo.js"></script>
+<script type="module" src="/assets/js/encoding-calculator.js"></script>

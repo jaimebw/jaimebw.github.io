@@ -17,6 +17,7 @@
   "type": "module",
   "dependencies": {
     "katex": "^0.16.27",
-    "rehype-katex": "^7.0.1"
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0"
   }
 }
