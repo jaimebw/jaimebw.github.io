@@ -63,12 +63,12 @@ The selected model is the function that represents the oscillatory motion of the
 
 $$
 \begin{cases}
-\dot{a}_1 = (1 - a_1^2 - a_2^2) a_1 - a_2, \\
-\dot{a}_2 = (1 - a_1^2 - a_2^2) a_2 + a_1 + b(a_1, a_2),
+  \dot{a}_1 = (1 - a_1^2 - a_2^2)\, a_1 - a_2, \\
+  \dot{a}_2 = (1 - a_1^2 - a_2^2)\, a_2 + a_1 + b(a_1, a_2)
 \end{cases}
 $$
 
-The control input enters the system through the function $$b$$, which in this first version I define as:
+The control input enters the system through the function $b$, which in this first version I define as:
 
 $$
 b(a_1,a_2) = a_1 \cdot b_1 + a_2 \cdot b_2
@@ -380,5 +380,3 @@ In parallel, I plan to extend the simulations toward **real CFD calculations**. 
 
 1. Robledo Martin, I. (2025). HyGO: A Python toolbox for Hybrid Genetic Optimization. 
 2. [Fixed Point Arithmetic](https://vanhunteradams.com/FixedPoint/FixedPoint.html)
-
-

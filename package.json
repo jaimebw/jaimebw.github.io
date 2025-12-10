@@ -1,22 +1,22 @@
 {
   "name": "new_web",
-  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "astro": "^5.16.4",
+    "remark-math": "^6.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
   "scripts": {
     "dev": "bunx --bun astro dev",
     "build": "bunx --bun astro build",
     "preview": "bunx --bun astro preview",
     "astro": "bunx --bun astro"
   },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "astro": "^5.16.4",
-    "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
+  "type": "module",
   "dependencies": {
-    "katex": "^0.16.27"
+    "katex": "^0.16.27",
+    "rehype-katex": "^7.0.1"
   }
 }

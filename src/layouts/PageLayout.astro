@@ -10,9 +10,11 @@ interface Props {
 const { title, subtitle, description } = Astro.props;
 ---
 <BaseLayout title={title} description={description ?? subtitle}>
-  <section>
+  <section class="markdown">
     {title && <h2>{title}</h2>}
     {subtitle && <p><em>{subtitle}</em></p>}
-    <slot />
+    <div class="markdown-body">
+      <slot />
+    </div>
   </section>
 </BaseLayout>

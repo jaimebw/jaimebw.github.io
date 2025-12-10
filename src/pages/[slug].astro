@@ -28,7 +28,7 @@ const formatDate = (value: Date) =>
   });
 ---
 <BaseLayout title={post.data.title} description={post.data.subtitle}>
-  <article>
+  <article class="markdown">
     <h2>{post.data.title}</h2>
     {post.data.subtitle && <p><em>{post.data.subtitle}</em></p>}
     <table>
@@ -49,6 +49,8 @@ const formatDate = (value: Date) =>
         )}
       </tbody>
     </table>
-    <Content />
+    <div class="markdown-body">
+      <Content />
+    </div>
   </article>
 </BaseLayout>

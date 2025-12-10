@@ -9,23 +9,48 @@ footer {
   margin-top: calc(var(--line-height) * 2);
 }
 
-.katex,
-.katex * {
-  font-family: var(--font-family) !important;
-  color: var(--text-color);
+.markdown {
+  width: 100%;
+  max-width: 78ch;
+  margin: 0 auto;
 }
 
-.katex {
+.markdown-body {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.markdown-body p {
+  margin-bottom: calc(var(--line-height) * 1.5);
+}
+
+.markdown-body img {
+  margin: calc(var(--line-height) * 1.5) 0;
+  border: 1px solid #dfe3ea;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.markdown-body .katex {
   font-size: 1.05rem;
+  line-height: 1.5;
+  color: inherit;
 }
 
-.katex-display {
+.markdown-body .katex-display {
   margin: calc(var(--line-height) * 2) 0;
-  padding: calc(var(--line-height)) 2ch;
-  border: var(--border-thickness) solid var(--text-color);
-  background: var(--background-color-alt);
+  padding: 1.25rem 2rem;
+  border-left: 3px solid #0f172a;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0));
+  overflow-x: auto;
+  text-align: left;
 }
 
-.katex-display > .katex {
-  text-align: left;
+.markdown-body .katex-display > .katex {
+  display: inline-block;
+}
+
+.markdown-body .katex *,
+.markdown-body .katex-display * {
+  margin-top: 0 !important;
 }
