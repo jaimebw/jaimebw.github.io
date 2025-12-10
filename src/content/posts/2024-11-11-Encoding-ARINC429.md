@@ -321,24 +321,31 @@ While ARINC429 may not be the most advanced protocol, its reliability ensures th
 
 
 # Encoding calculator {#enc-calc}
-<div id="wasm-container"></div>
+<div id="wasm-container">
 <style>
-  #wasm-container {
-    margin-top: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0.75rem;
-    background: #0b0b0b;
-  }
-  .game {
-    width: 100%;
-    max-width: 640px;
-    height: 360px;
-    display: block;
-    margin: 0 auto;
-    border: 0;
-    image-rendering: optimizeSpeed;
-    image-rendering: pixelated;
-    -ms-interpolation-mode: nearest-neighbor;
-  }
+      .game {
+        top: 0;
+        left: 0;
+        margin: 0;
+        border: 0;
+        width: 120%;
+        height: 100%;
+        overflow: hidden;
+        display: block;
+        image-rendering: optimizeSpeed;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        -ms-interpolation-mode: nearest-neighbor;
+      }
 </style>
+<canvas
+      class="game"
+      id="canvas"
+      oncontextmenu="event.preventDefault()"
+></canvas>
 <script type="module" src="/assets/js/encoding-calculator.js"></script>
+</div>
