@@ -1,3 +1,4 @@
+---
 layout: ../layouts/PageLayout.astro
 title: Publications and conferences
 subtitle: Academic world stuff
