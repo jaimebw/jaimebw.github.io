@@ -19,6 +19,11 @@ const metaDescription =
 const canonicalUrl = Astro.site
   ? new URL(Astro.url.pathname, Astro.site).toString()
   : Astro.url.href;
+const defaultOgImage = "/assets/img/jaime_bird.png";
+const ogImageSource = ogImage ?? defaultOgImage;
+const ogImageUrl = Astro.site
+  ? new URL(ogImageSource, Astro.site).toString()
+  : ogImageSource;
 const today = new Date().toISOString().split("T")[0];
 ---
 <!doctype html>
@@ -32,9 +37,13 @@ const today = new Date().toISOString().split("T")[0];
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={pageLabel} />
     <meta property="og:description" content={metaDescription} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageLabel} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
     <GoogleAnalytics />
   </head>
   <body>

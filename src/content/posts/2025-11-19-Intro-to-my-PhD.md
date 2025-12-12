@@ -1,7 +1,7 @@
 ---
 title: "PhD Blog #1 – Controlling the Landau Oscillator: Forging Real-Time FPGA Flow Control"
 subtitle: "Six months of experiments: Verilog, UART, and FPGA logic to tame the Landau oscillator"
-date: 2025-04-10
+date: 2025-11-19
 tags: [verilog, fpga, cfd, control, aerospace]
 ---
 

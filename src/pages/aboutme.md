@@ -15,4 +15,6 @@ I have a lot of experience in different fields regarding aviation software, data
 - My favorite plane is the [Stuka](https://en.wikipedia.org/wiki/Junkers_Ju_87)
 - I'm passionate about computers 💻, obsessed with anything that flies ✈️, live for the thrill of motorcycles 🏍️, and get lost in the pages of vintage books 📚.
 
+My insignia:
 ![Jaime Bowen Varela](/assets/img/jaime_bird.png)
+
